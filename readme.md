@@ -1,32 +1,32 @@
-#Currency Converter in Laravel 5.7
-##Installation
+# Currency Converter in Laravel 5.7
+## Installation
 
-####CMD
+#### CMD
 - composer install
 - cp .env.example .env
 - cp .env.example .env.testing
 
-####FILES
+#### FILES
 - Modify .env file and set up database settings
 - Modify  .env.testing file and set up database settings for phpunit
 - Default converter response precision can be set as CONVERTER_PRECISION=
 
-####CMD
+#### CMD
 - php artisan key:generate
 - php artisan key:generate --env=testing
 
-#####If you need migration and db seed:
+##### If you need migration and db seed:
 - php artisan migrate
 - php artisan db:seed
 
 - php artisan migrate --env=testing
 
 
-##Application
-###GET /api/v1/converter
+## Application
+### GET /api/v1/converter
 #### Responses
 
-#####- 200 OK
+##### - 200 OK
 /api/v1/converter?base_currency=pln&dest_currency=eur&amount=21
 
 
@@ -43,7 +43,7 @@
 }
 ```
 
-#####- 422 Unprocessable Entity
+##### - 422 Unprocessable Entity
 /api/v1/converter?base_currency=jpy&dest_currency=eur&exchange_rate=abc
 ```
 {
@@ -58,7 +58,7 @@
 }
 ```
 
-##Tests
+## Tests
 If testing environment is set up you can use phpunit and run tests.
-###CMD
+### CMD
 - phpunit
